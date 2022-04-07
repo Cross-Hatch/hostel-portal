@@ -1,5 +1,5 @@
 {
-    "name": "Hostel Tracker",
+    "name": "hostel-tracker",
     "version": "0.1.0",
     "description": "A website to track complains louged by students in a hostel",
     "main": "public/index.html",

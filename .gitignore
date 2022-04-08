@@ -1,6 +1,8 @@
 node_modules
 public
 
+package-lock.json
+
 .sass-cache/
 styles/*.css.map
 styles/*.sass.map

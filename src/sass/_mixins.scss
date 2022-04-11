@@ -54,3 +54,17 @@
   transform: scale(0.99);
   opacity: 0.99;
 }
+
+/* Primary button styles */
+@mixin primary-button {
+  color: $light !important;
+  font-weight: bold;
+  padding: 1em 2em;
+  cursor: pointer;
+  transition: opacity 0.5s ease-in-out, transform 0.03s ease-in,
+    background 0.5s ease-in-out;
+
+  @include primary-btn-color;
+  @include border-radius-md;
+  @include shadow(#3643fc);
+}

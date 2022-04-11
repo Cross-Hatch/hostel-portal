@@ -22,3 +22,13 @@
 @mixin secondary-btn-color {
   background: #ffffff1a;
 }
+
+/* Border radius for large contents. Ex cards */
+@mixin border-radius-lg($tl: 1.5em, $tr: 1.5em, $br: 1.5em, $bl: 1.5em) {
+  border-radius: $tl $tr $br $bl;
+}
+
+/* Border radius for medium contents. Ex buttons */
+@mixin border-radius-md($tl: 0.75em, $tr: 0.75em, $br: 0.75em, $bl: 0.75em) {
+  border-radius: $tl $tr $br $bl;
+}

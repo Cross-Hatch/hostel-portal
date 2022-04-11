@@ -14,3 +14,11 @@
     0px 6.73877px 8.49085px rgba(0, 0, 0, 0.0605839),
     0px 2.80415px 3.53323px rgba(0, 0, 0, 0.0421718);
 }
+
+@mixin primary-btn-color {
+  background: linear-gradient(180deg, #5561ff 0%, #3643fc 100%, #3643fc 100%);
+}
+
+@mixin secondary-btn-color {
+  background: #ffffff1a;
+}

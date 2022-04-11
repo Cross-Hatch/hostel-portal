@@ -32,3 +32,25 @@
 @mixin border-radius-md($tl: 0.75em, $tr: 0.75em, $br: 0.75em, $bl: 0.75em) {
   border-radius: $tl $tr $br $bl;
 }
+
+/* Hover effect for buttons mainly.
+      *  pass $param primary for primary button hover effect
+      *  pass $param secondary for secondary button hover effect
+      */
+@mixin hover($param) {
+  @if $param == 'secondary' {
+    background-color: rgba(255, 255, 255, 0.14);
+    transform: scale(1.1) translateY(-5px);
+  }
+
+  @if $param == 'primary' {
+    transform: scale(1.1) translateY(-5px);
+    opacity: 0.87;
+  }
+}
+
+/* Click effect for buttons */
+@mixin click {
+  transform: scale(0.99);
+  opacity: 0.99;
+}

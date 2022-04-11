@@ -5,4 +5,16 @@
 
 body {
   background: $primary;
+  color: $light;
+}
+
+header{
+    background: $primary;
+    @include super-shadow;
+    @include border-radius-md;
+
+    .logo {
+        font-weight: 700;
+        font-size: 1.5em;
+    }
 }

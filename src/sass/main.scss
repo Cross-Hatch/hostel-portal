@@ -1,2 +1,4 @@
-@use 'resets';
-@use '../../node_modules/bootstrap/scss/bootstrap.scss'
+@import 'resets';
+@import 'mixins';
+@import 'variables';
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';

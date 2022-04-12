@@ -1,10 +1,41 @@
 .side_nav {
-    background:  #1b1b28;
-    width: 12.5em;
-    height: 100vh;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
+  background:  #1b1b28;
+  width: 12.5em;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.complains{
+  margin: 3em 18em;
+}
+#send{
+  background-color: #8181ec;
+  padding: 0.2em 1.8em;
+  border: none;
+  @include primary-button;
+  &:hover{
+    @include hover(primary);
   }
-  
+  &:active {
+    @include click;
+  }
+}
+.bradius{
+  border-radius: 0.5em;
+  border: 0.2em solid $secondary;
+}
+input, select, textarea{
+  background: none;
+  color: #fff;
+  padding: 0.5em 0.75em;
+
+  &:focus {
+    outline: none;
+    border-color: #b4b7d3;
+  }
+}
+select * {
+  background: $secondary;
+}

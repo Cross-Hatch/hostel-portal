@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Hostel Tracker</title>
+  </head>
+  <body>
+    <header class="py-3">
+      <div class="container">
+        <div class="row justify-content-center align-items-center">
+          <div class="logo"><a href="#">Adepa Hostel</a></div>
+        </div>
+      </div>
+    </header>
+
+        <div class="side_nav"></div>
+    
+        <div class="complains">
+          <div class="container">
+            <form action="">
+              <legend class="mx-3 my-1">Complains</legend>
+              <div class="d-flex">
+                <div class="m-3">
+                  <label for="name">Name</label>
+                  <br>
+                  <input class="bradius" type="text" placeholder="Name">
+                </div>
+                <div class="m-3">
+                  <label for="roomnumber">Room number</label>
+                  <br>
+                  <select name="roomnumber" id="roomnumber">
+                    <option value="Room 1">Room number one</option>
+                    <option value="Room 2">Room number two</option>
+                    <option value="Room 3">Room number three</option>
+                    <option value="Room 4">Room number four</option>
+                  </select>
+                </div>
+              </div>
+              <div class="m-3">
+                <label for="message">Message</label>
+                <br>
+                <textarea name="message" id="message" cols="60" rows="10" placeholder="Type your complain"></textarea>
+              </div>
+              <input class="mx-3 my-1" id="send" type="submit" value="Submit">
+  
+            </form>
+          </div>
+        </div>
+
+  </body>
+</html>

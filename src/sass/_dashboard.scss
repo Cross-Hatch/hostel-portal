@@ -35,10 +35,6 @@
       word-wrap: break-word;
     }
 
-    img {
-      height: em;
-    }
-
     &:nth-child(1) img {
       @include shadow($clr: #ef586e, $blur: 30px);
     }

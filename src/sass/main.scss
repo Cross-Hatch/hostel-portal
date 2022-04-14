@@ -9,42 +9,53 @@ body {
   color: $light;
 }
 
-header{
-    background: $primary;
-    @include super-shadow;
-    @include border-radius-md;
+header {
+  position: absolute;
+  width: 100vw;
+  background: $primary;
+  @include super-shadow;
+  @include border-radius-md;
 
-    .logo {
-        font-weight: 700;
-        font-size: 1.5em;
-    }
+  .logo {
+    font-weight: 700;
+    font-size: 1.5em;
+  }
 }
+
+main.container {
+  height: 100vh;
+}
+
 .card--login {
   background: $secondary;
-  padding: 0.75em;
-  margin: 1.5em;
+  width: 100%;
+  height: 75%;
+  //padding: 0.75em;
+  //margin: 1.5em;
   max-width: max-content;
 
   @include border-radius-lg;
   @include super-shadow;
 
-  .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .row {
+    height: 100%;
   }
 
   .aside--img {
-    max-width: max-content;
+    width: 50%;
+    height: 100%;
+    padding: 0.3em;
 
     img {
-      overflow: hidden;
-      @include border-radius-md($br: 0, $bl: 0);
+      height: 100%;
+      object-fit: cover;
+      @include border-radius-lg($tr: 0, $br: 0);
     }
   }
 
   .login--details {
     max-width: 50%;
+    height: 100%;
 
     h1 {
       text-align: center;

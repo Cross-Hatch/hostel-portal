@@ -27,7 +27,7 @@ header {
 }
 
 main.container {
-  height: 100vh;
+  height: calc(100vh - 68px);
 }
 
 .card--login {

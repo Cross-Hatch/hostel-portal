@@ -1,38 +1,41 @@
 .side_nav {
-  background:  #1b1b28;
+  background: #1b1b28;
   width: 12.5em;
   height: 100vh;
   float: left;
 }
-.complains{
-  margin: 3em 18em;
-}
-#send{
-  background-color: #8181ec;
-  padding: 0.2em 1.8em;
-  border: none;
-  @include primary-button;
-  &:hover{
-    @include hover(primary);
-  }
-  &:active {
-    @include click;
-  }
-}
-.bradius{
-  border-radius: 0.5em;
-  border: 0.2em solid $secondary;
-}
-input, select, textarea{
-  background: none;
-  color: #fff;
-  padding: 0.5em 0.75em;
+.complains {
+  // margin: 3em 18em;
 
-  &:focus {
-    outline: none;
-    border-color: #b4b7d3;
+  #send {
+    border: none;
+
+    @include primary-button;
+    
+    &:hover {
+      @include hover(primary);
+    }
+    &:active {
+      @include click;
+    }
   }
-}
-select * {
-  background: $secondary;
+
+  input:not([type='submit']),
+  select,
+  textarea {
+    background: none;
+    color: #fff;
+    padding: 0.5em 0.75em;
+    border: 3px solid $secondary;
+    @include border-radius-md;
+
+    &:focus {
+      outline: none;
+      border-color: #b4b7d3;
+    }
+  }
+
+  select * {
+    background: $secondary;
+  }
 }

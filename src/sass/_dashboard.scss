@@ -11,7 +11,9 @@
 
 .dashboard {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 2em 0em;
   margin: 5em 0 0 0;
 
   a{
@@ -25,12 +27,12 @@
     justify-content: space-evenly;
     align-items: center;
     background: $secondary;
-    @include border-radius-md;
     height: 20em;
     width: 15em;
     padding: 0.75em;
     cursor: pointer;
     transition: background 300ms ease-in-out;
+
 
     }
     .dashboard_item:hover {
@@ -40,4 +42,26 @@
     width: 16em;
  }
     
+    @include shadow($clr: $primary);
+    @include border-radius-md;
+
+    h1 {
+      font-size: 2em;
+      text-align: center;
+      word-wrap: break-word;
+    }
+
+    &:nth-child(1) img {
+      @include shadow($clr: #ef586e, $blur: 30px);
+    }
+
+    &:nth-child(2) img {
+      @include shadow($clr: #32d5aa, $blur: 20px);
+    }
+
+    &:nth-child(3) img {
+      @include shadow($clr: #1766f9, $blur: 30px);
+    }
+  }
+
 }

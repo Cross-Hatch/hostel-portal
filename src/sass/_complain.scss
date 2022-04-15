@@ -1,11 +1,11 @@
 .side_nav {
   background: #1b1b28;
   width: 12.5em;
-  height: 100vh;
+  height: calc(100vh + 68px);
   float: left;
 }
 .complains {
-  margin: 4em auto;
+  margin: 3em auto;
 
   #send {
     border: none;

@@ -26,6 +26,13 @@ header {
   }
 }
 
+.side_nav {
+  background: #1b1b28;
+  width: 12.5em;
+  height: calc(100vh + 68px);
+  float: left;
+}
+
 main.container {
   height: calc(100vh - 68px);
 }

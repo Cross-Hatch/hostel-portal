@@ -35,6 +35,10 @@
     }
   }
 
+  textarea {
+    resize: none;
+  }
+
   select * {
     background: $secondary;
   }

@@ -1,0 +1,41 @@
+.side_nav {
+  background: #1b1b28;
+  width: 12.5em;
+  height: 100vh;
+  float: left;
+}
+.complains {
+  // margin: 3em 18em;
+
+  #send {
+    border: none;
+
+    @include primary-button;
+    
+    &:hover {
+      @include hover(primary);
+    }
+    &:active {
+      @include click;
+    }
+  }
+
+  input:not([type='submit']),
+  select,
+  textarea {
+    background: none;
+    color: #fff;
+    padding: 0.5em 0.75em;
+    border: 3px solid $secondary;
+    @include border-radius-md;
+
+    &:focus {
+      outline: none;
+      border-color: #b4b7d3;
+    }
+  }
+
+  select * {
+    background: $secondary;
+  }
+}

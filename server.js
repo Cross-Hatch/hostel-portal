@@ -1,12 +1,36 @@
-const { name } = require('ejs')
-const { urlencoded } = require('express')
+if (process.env.NODE_ENV !== 'production'){
+    require('dotenv').config()
+}
+
 const express = require('express')
 const app = express()
 const fs = require('fs')
 const bcrypt = require('bcrypt')
+const flash = require('express-flash')
+const session = require('express-session')
+
+const passport = require('passport')
+
+const initializePassport = require('./passport-config')
+
+initializePassport(
+    passport,
+    email =>users.find(user => user.email === email)
+)
+
 const users = []
 
+
 app.use(express.urlencoded({extended : false}))
+app.use(flash())
+app.use(session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized:false
+}))
+app.use(passport.initialize())
+app.use(passport.session())
+
 app.get('/', (req,res) => {
     res.writeHead(200, {'Content-Type':'text/html'}, {name:'David'})
     fs.readFile('src/index.html',function(error,data){
@@ -23,7 +47,11 @@ app.get('/', (req,res) => {
 
 
 
-app.post('/',(req,res)=>{})
+app.post('/', passport.authenticate('local',{
+    successRedirect:'/dashboard',
+    failureRedirect:'/',
+    failureFlash: true
+}))
 
 app.get('/complain', (req,res) => {
     res.writeHead(200, {'Content-Type':'text/html'})
@@ -76,11 +104,13 @@ app.post('/register',async(req,res)=>{
             email: req.body.email,
             password: hiddenPassword
         })
-        res.redirect('/index')
+        res.redirect('/dashboard')
     }
     catch{
-        res.redirect('/register')
+        res.redirect('/login')
+        
     }
+    console.log(users)
 })
 
 app.listen(3002)

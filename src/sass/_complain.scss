@@ -11,7 +11,7 @@
     border: none;
 
     @include primary-button;
-    
+
     &:hover {
       @include hover(primary);
     }
@@ -41,5 +41,57 @@
 
   select * {
     background: $secondary;
+  }
+}
+
+dialog {
+  background: $primary;
+  max-width: 30ch;
+  height: 23em;
+  padding: 0;
+  border: none;
+  color: $light;
+  text-align: center;
+
+  & > div {
+    height: 100%;
+  }
+
+  .txt-details {
+    margin: 1em 0 -2em 0;
+  }
+
+  @include border-radius-md;
+  @include shadow($clr: $primary);
+
+  h1 {
+    font-size: 1.5em;
+  }
+  p {
+    font-size: 0.75em;
+  }
+
+  #close-btn {
+    @include primary-button;
+
+    &:hover {
+      @include hover(primary);
+    }
+    &:active {
+      @include click;
+    }
+  }
+
+  &[open] {
+    animation: fade-in 100ms ease-in, slide-up 100ms ease-in;
+  }
+
+  &[close] {
+    animation: fade-out 500ms ease-out, scale-out-in 500ms ease-in-out;
+  }
+
+  &::backdrop {
+    background: $secondary;
+    opacity: 0.4;
   }
 }

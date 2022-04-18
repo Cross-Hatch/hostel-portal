@@ -1,8 +1,9 @@
+@import 'variables';
 @import 'resets';
 @import 'mixins';
-@import 'dashboard';
-@import 'variables';
+@import 'keyframes';
 @import 'complain';
+@import 'dashboard';
 @import '../../node_modules/bootstrap/scss/bootstrap.scss';
 
 html {

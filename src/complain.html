@@ -26,13 +26,13 @@
     
         <div class="complains d-flex justify-content-center">
           <!-- <div class="container"> -->
-            <form action="">
+            <form name="complain" action="" onsubmit="openModal()" method="post">
               <legend class="mx-3 my-1"><h1>Complains</h2></legend>
               <div class="d-flex">
                 <div class="m-3">
                   <label for="name">Name</label>
                   <br>
-                  <input class="bradius" type="text" placeholder="Full name" required>
+                  <input class="bradius" type="text" placeholder="Full name" name="username" required>
                 </div>
                 <div class="m-3">
                   <label for="roomnumber">Room number</label>
@@ -54,7 +54,20 @@
   
             </form>
           <!-- </div> -->
+          <dialog id="modal">
+            <div class="align-items-center d-flex flex-column justify-content-evenly p-2">
+              <img src="assets/svgs/check.svg" alt="check mark">
+              <div class="txt-details">
+                <h1>Complain Submitted</h1>
+                <p>
+                  Your complain has been submitted to the potters.
+                  Check back later to see the status of the complain.
+                </p>
+              </div>
+              <div id="close-btn">Close</div>
+            </div>
+          </dialog>
         </div>
-
+        <script src="scripts/dialog.js"></script>
   </body>
 </html>

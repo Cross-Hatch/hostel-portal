@@ -15,7 +15,8 @@ const initializePassport = require('./passport-config')
 
 initializePassport(
     passport,
-    email =>users.find(user => user.email === email)
+    email =>users.find(user => user.email === email),
+    id =>users.find(user => user.id === id)
 )
 
 const users = []
@@ -31,8 +32,8 @@ app.use(session({
 app.use(passport.initialize())
 app.use(passport.session())
 
-app.get('/', (req,res) => {
-    res.writeHead(200, {'Content-Type':'text/html'}, {name:'David'})
+app.get('/',CheckNotAuthenticated,(req,res) => {
+    res.writeHead(200, {'Content-Type':'text/html'}, {name:req.user.name})
     fs.readFile('src/index.html',function(error,data){
         if(error){
             res.writeHead(404)
@@ -47,13 +48,13 @@ app.get('/', (req,res) => {
 
 
 
-app.post('/', passport.authenticate('local',{
+app.post('/',CheckNotAuthenticated, passport.authenticate('local',{
     successRedirect:'/dashboard',
     failureRedirect:'/',
     failureFlash: true
 }))
 
-app.get('/complain', (req,res) => {
+app.get('/complain',CheckAuthenticated, (req,res) => {
     res.writeHead(200, {'Content-Type':'text/html'})
     fs.readFile('src/complain.html',function(error,data){
         if(error){
@@ -67,7 +68,7 @@ app.get('/complain', (req,res) => {
     })
 })
 
-app.get('/dashboard', (req,res) => {
+app.get('/dashboard',CheckAuthenticated, (req,res) => {
     res.writeHead(200, {'Content-Type':'text/html'})
     fs.readFile('src/dashboard.html',function(error,data){
         if(error){
@@ -112,5 +113,19 @@ app.post('/register',async(req,res)=>{
     }
     console.log(users)
 })
+
+function  CheckAuthenticated(req, res, next){
+    if(req.isAuthenticated()){
+        return next()
+    }
+    res.redirect('/')
+}
+function  CheckNotAuthenticated(req, res, next){
+    if(req.isAuthenticated()){
+       return res.redirect('/dashboard')
+    }
+    next()
+}
+
 
 app.listen(3002)

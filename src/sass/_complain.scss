@@ -11,7 +11,7 @@
     border: none;
 
     @include primary-button;
-    
+
     &:hover {
       @include hover(primary);
     }
@@ -64,7 +64,7 @@ dialog {
     font-size: 1.5em;
   }
   p {
-    font-size: .75em;
+    font-size: 0.75em;
   }
 
   #close-btn {
@@ -80,6 +80,34 @@ dialog {
 
   &::backdrop {
     background: $secondary;
-    opacity: .4;
+    opacity: 0.4;
+  }
+}
+
+//Animation
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(20%);
+  }
+  100% {
+    transform: translateY(0%);
   }
 }

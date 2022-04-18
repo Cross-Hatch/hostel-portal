@@ -43,3 +43,43 @@
     background: $secondary;
   }
 }
+
+dialog {
+  background: $primary;
+  max-width: 30ch;
+  height: 23em;
+  padding-inline: 1em;
+  border: none;
+  color: $light;
+  text-align: center;
+
+  & > div {
+    height: 100%;
+  }
+
+  @include border-radius-md;
+  @include shadow($clr: $primary);
+
+  h1 {
+    font-size: 1.5em;
+  }
+  p {
+    font-size: .75em;
+  }
+
+  #close-btn {
+    @include primary-button;
+
+    &:hover {
+      @include hover(primary);
+    }
+    &:active {
+      @include click;
+    }
+  }
+
+  &::backdrop {
+    background: $secondary;
+    opacity: .4;
+  }
+}

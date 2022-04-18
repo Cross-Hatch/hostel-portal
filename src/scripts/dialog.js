@@ -7,5 +7,9 @@ openModal.addEventListener('click', () => {
 })
 
 closeModal.addEventListener('click', () => {
-    modal.close()
+    modal.setAttribute('close', '')
+    modal.addEventListener('animationend', () => {
+        modal.removeAttribute('close')
+        modal.close()
+    }, {once: true})
 })

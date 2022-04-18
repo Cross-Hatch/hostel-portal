@@ -8,10 +8,9 @@ const fs = require('fs')
 const bcrypt = require('bcrypt')
 const flash = require('express-flash')
 const session = require('express-session')
-
 const passport = require('passport')
-
 const initializePassport = require('./passport-config')
+const MethodOverride = require('method-override')
 
 initializePassport(
     passport,
@@ -31,6 +30,7 @@ app.use(session({
 }))
 app.use(passport.initialize())
 app.use(passport.session())
+app.use(MethodOverride('_method'))
 
 app.get('/',CheckNotAuthenticated,(req,res) => {
     res.writeHead(200, {'Content-Type':'text/html'}, {name:req.user.name})
@@ -112,6 +112,11 @@ app.post('/register',async(req,res)=>{
         
     }
     console.log(users)
+})
+
+app.delete('/logout', (req,res) =>{
+    req.logOut()
+    req.redirect('/')
 })
 
 function  CheckAuthenticated(req, res, next){

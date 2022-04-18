@@ -78,36 +78,16 @@ dialog {
     }
   }
 
+  &[open] {
+    animation: fade-in 100ms ease-in, slide-up 100ms ease-in;
+  }
+
+  &[close] {
+    animation: fade-out 500ms ease-out, scale-out-in 500ms ease-in-out;
+  }
+
   &::backdrop {
     background: $secondary;
     opacity: 0.4;
-  }
-}
-
-//Animation
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes fade-out {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-@keyframes slide-up {
-  0% {
-    transform: translateY(20%);
-  }
-  100% {
-    transform: translateY(0%);
   }
 }

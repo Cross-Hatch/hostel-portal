@@ -1,0 +1,79 @@
+@mixin shadow($clr, $blur: 20px) {
+  filter: drop-shadow(0px 12px $blur $clr) drop-shadow(0px 12px 9px #00000088);
+}
+
+@mixin super-shadow {
+  box-shadow: 0px 101.333px 127.68px rgba(0, 0, 0, 0.15),
+    0px 42.3346px 53.3417px rgba(0, 0, 0, 0.107828),
+    0px 22.6341px 28.519px rgba(0, 0, 0, 0.0894161),
+    0px 12.6885px 15.9875px rgba(0, 0, 0, 0.075),
+    0px 6.73877px 8.49085px rgba(0, 0, 0, 0.0605839),
+    0px 2.80415px 3.53323px rgba(0, 0, 0, 0.0421718);
+}
+
+@mixin primary-btn-color {
+  background: linear-gradient(180deg, #5561ff 0%, #3643fc 100%, #3643fc 100%);
+}
+
+@mixin secondary-btn-color {
+  background: #ffffff1a;
+}
+
+/* Border radius for large contents. Ex cards */
+@mixin border-radius-lg($tl: 1.5em, $tr: 1.5em, $br: 1.5em, $bl: 1.5em) {
+  border-radius: $tl $tr $br $bl;
+}
+
+/* Border radius for medium contents. Ex buttons */
+@mixin border-radius-md($tl: 0.75em, $tr: 0.75em, $br: 0.75em, $bl: 0.75em) {
+  border-radius: $tl $tr $br $bl;
+}
+
+/* Hover effect for buttons mainly.
+      *  pass $param primary for primary button hover effect
+      *  pass $param secondary for secondary button hover effect
+      */
+@mixin hover($param) {
+  @if $param == 'secondary' {
+    background-color: rgba(255, 255, 255, 0.14);
+    transform: scale(1.1) translateY(-5px);
+  }
+
+  @if $param == 'primary' {
+    transform: scale(1.1) translateY(-5px);
+    opacity: 0.87;
+  }
+}
+
+/* Click effect for buttons */
+@mixin click {
+  transform: scale(0.99);
+  opacity: 0.99;
+}
+
+/* Primary button styles */
+@mixin primary-button {
+  color: $light !important;
+  font-weight: bold;
+  padding: 1em 2em;
+  cursor: pointer;
+  transition: opacity 0.5s ease-in-out, transform 0.03s ease-in,
+    background 0.5s ease-in-out;
+
+  @include primary-btn-color;
+  @include border-radius-md;
+  @include shadow(#3643fc);
+}
+
+/* Secondary button styles */
+@mixin secondary-button {
+  color: $light !important;
+  font-weight: bold;
+  padding: 1em 2em;
+  cursor: pointer;
+  transition: opacity 0.5s ease-in-out, transform 0.03s ease-in,
+    background 0.5s ease-in-out;
+
+  @include secondary-btn-color;
+  @include border-radius-md;
+}

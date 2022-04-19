@@ -1,4 +1,6 @@
-/*
+@import "variables";
+
+/*!
 * Resets form Piccalilli - A Modern CSS Reset
 * @link https://piccalil.li/blog/a-modern-css-reset/
 */
@@ -24,9 +26,14 @@ dd {
   margin: 0;
 }
 
+h1 {
+  font-weight: bold !important;
+  color: $light;
+}
+
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role='list'],
-ol[role='list'] {
+ul[role="list"],
+ol[role="list"] {
   list-style: none;
 }
 
@@ -37,6 +44,7 @@ html:focus-within {
 
 /* Set core body defaults */
 body {
+  font-family: "Ubuntu", sans-serif !important;
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
@@ -45,6 +53,8 @@ body {
 /* A elements that don't have a class get default styles */
 a:not([class]) {
   text-decoration-skip-ink: auto;
+  color: $light;
+  text-decoration: none;
 }
 
 /* Make images easier to work with */

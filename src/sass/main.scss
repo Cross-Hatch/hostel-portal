@@ -1,1 +1,110 @@
-@use 'resets';
+@import 'variables';
+@import 'resets';
+@import 'mixins';
+@import 'keyframes';
+@import 'complain';
+@import 'dashboard';
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  background: $primary;
+  color: $light;
+}
+
+header {
+  width: 100vw;
+  background: $primary;
+  @include super-shadow;
+  @include border-radius-md;
+
+  .logo {
+    font-weight: 700;
+    font-size: 1.5em;
+  }
+}
+
+.side_nav {
+  background: #1b1b28;
+  width: 12.5em;
+  min-height: calc(100vh + 68px);
+  float: left;
+}
+
+main.container {
+  height: calc(100vh - 68px);
+}
+
+.card--login {
+  background: $secondary;
+  width: 100%;
+  height: 30em;
+  max-width: max-content;
+
+  @include border-radius-lg;
+  @include super-shadow;
+
+  .row {
+    height: 100%;
+  }
+
+  .aside--img {
+    width: 50%;
+    height: 100%;
+    padding: 0.3em;
+
+    img {
+      height: 100%;
+      object-fit: cover;
+      @include border-radius-lg($tr: 0, $br: 0);
+    }
+  }
+
+  .login--details {
+    max-width: 50%;
+    height: 100%;
+
+    h1 {
+      text-align: center;
+    }
+  }
+
+  form {
+    fieldset div {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 1em;
+    }
+
+    fieldset input {
+      background: none;
+      color: $light;
+      border: 3px solid #60648b;
+      padding: 0.5em 0.75em;
+
+      @include border-radius-md;
+
+      &:focus {
+        outline: none;
+        border-color: #b4b7d3;
+      }
+    }
+
+    .login--btn input {
+      all: unset;
+      border: none;
+      @include primary-button;
+
+      &:hover {
+        @include hover(primary);
+      }
+
+      &:active {
+        @include click;
+      }
+    }
+  }
+}

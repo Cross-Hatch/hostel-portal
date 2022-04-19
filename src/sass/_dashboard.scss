@@ -1,0 +1,50 @@
+.dashboard {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 2em 0em;
+  margin: 5em 0 0 0;
+
+  .dashboard_item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background: $secondary;
+    height: 20em;
+    width: 15em;
+    padding: 0.75em;
+    cursor: pointer;
+    transition: background 300ms ease-in-out, height, scale 300ms ease-in-out,
+      padding 400ms ease-in-out;
+
+    @include shadow($clr: $primary);
+    @include border-radius-md;
+
+    h1 {
+      font-size: 2em;
+      text-align: center;
+      word-wrap: break-word;
+    }
+
+    &:hover {
+      background: #1b1b28;
+      padding: 1.75em;
+      height: 21em;
+      width: 16em;
+      @include hover(primary);
+    }
+  }
+
+  img[alt="complain icon"] {
+    @include shadow($clr: #ef586e, $blur: 30px);
+  }
+
+  img[alt="payment icon"] {
+    @include shadow($clr: #32d5aa, $blur: 20px);
+  }
+
+  img[alt="registration icon"] {
+    @include shadow($clr: #1766f9, $blur: 30px);
+  }
+}

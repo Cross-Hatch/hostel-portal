@@ -1,7 +1,7 @@
 const modal = document.getElementById('modal')
 // const openModal = document.getElementById('send')
 const closeModal = document.getElementById('close-btn')
-// const complainForm = document.forms["complain"]
+const complainForm = document.forms["complain"]
 const form = document.getElementById("complain")
 
 form.addEventListener('submit', event => {
